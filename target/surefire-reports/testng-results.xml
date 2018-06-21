@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="firstTest" duration-ms="698" started-at="2018-06-21T05:48:20Z" finished-at="2018-06-21T05:48:21Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="698" started-at="2018-06-21T05:48:20Z" finished-at="2018-06-21T05:48:21Z">
+      <class name="firstTest">
+        <test-method status="PASS" signature="getJSON()[pri:0, instance:firstTest@67b64c45]" name="getJSON" is-config="true" duration-ms="1440" started-at="2018-06-21T05:48:18Z" finished-at="2018-06-21T05:48:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getJSON -->
+        <test-method status="PASS" signature="ConfirmCanRelist()[pri:0, instance:firstTest@67b64c45]" name="ConfirmCanRelist" duration-ms="397" started-at="2018-06-21T05:48:20Z" finished-at="2018-06-21T05:48:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfirmCanRelist -->
+        <test-method status="PASS" signature="ConfirmCategoryName()[pri:0, instance:firstTest@67b64c45]" name="ConfirmCategoryName" duration-ms="11" started-at="2018-06-21T05:48:20Z" finished-at="2018-06-21T05:48:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfirmCategoryName -->
+        <test-method status="PASS" signature="getCategoryPromotions()[pri:0, instance:firstTest@67b64c45]" name="getCategoryPromotions" duration-ms="274" started-at="2018-06-21T05:48:20Z" finished-at="2018-06-21T05:48:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCategoryPromotions -->
+      </class> <!-- firstTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- firstTest -->
+</testng-results>
