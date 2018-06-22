@@ -8,14 +8,14 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class CategoryTest {
-    Response response;
-    RequestSpecification httpRequest;
-    JsonPath jsonPathEvaluator;
+    private Response response;
+    private RequestSpecification httpRequest;
+    private JsonPath jsonPathEvaluator;
     private String categoryName;
     private Boolean canRelist;
 
     @BeforeSuite
-    public void Setup(){
+    public void setup(){
         RestAssured.baseURI = "https://api.tmsandbox.co.nz/v1";
         httpRequest = RestAssured.given();
         response = httpRequest.request(Method.GET, "/Categories/6327/Details.json?catalogue=false");
@@ -29,7 +29,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void ConfirmCategoryNameEqualsCarbonCredits() {
+    public void confirmCategoryNameEqualsCarbonCredits() {
         // get json element "Name"
         categoryName = jsonPathEvaluator.get("Name");
         // confirm name is "Carbon credits"
@@ -38,7 +38,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void ConfirmCanRelist(){
+    public void confirmCanRelist(){
         // get json element "CanRelist" value and store as boolean
         canRelist = jsonPathEvaluator.get("CanRelist");
         // confirm "CanRelist" is true
@@ -47,7 +47,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void ConfirmCategoryPromotionGalleryDescription(){
+    public void confirmCategoryPromotionGalleryDescription() throws Exception {
         // convert json array "Promotions" to java array
         Promotions[] promotions = response.jsonPath().getObject("Promotions", Promotions[].class);
         // confirm promotion called "Gallery" has a description which contains "2x larger image"
@@ -56,13 +56,13 @@ public class CategoryTest {
 
 
     // returns description of promotion [array] based on name
-    public String checkDescription(Promotions[] promotions, String name){
+    private static String checkDescription(Promotions[] promotions, String name) throws Exception {
         for (Promotions p : promotions){
             if (p.getName().equals(name)){
                 return p.getDescription();
                   }
         }
-        return "";
+        throw new Exception("Promotion name not found");
     }
 
 
